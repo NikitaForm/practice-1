@@ -1,6 +1,7 @@
 
 export default function getNthItem(a, n) {
-    // Change me!
-
-    return 0;
+    if (n === 0) {
+        return 0;
+    }
+    return a - 2 * getNthItem(a, n - 1);
 }

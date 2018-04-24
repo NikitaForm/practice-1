@@ -1,6 +1,11 @@
 
 export default function trim(text, maxLength) {
-    // Change me!
+    if (!maxLength || maxLength < 0) {
+        throw new RangeError();
+    }
 
-    return "";
+    if (text.length > maxLength) {
+        text = `${text.substr(0, maxLength - 1)}\u2026`;
+    }
+    return text;
 }
